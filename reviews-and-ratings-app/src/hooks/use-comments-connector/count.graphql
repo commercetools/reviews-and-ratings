@@ -1,0 +1,5 @@
+query CommentCount($where: String) {
+  reviews(where: $where, limit: 0) {
+    total
+  }
+}

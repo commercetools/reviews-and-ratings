@@ -1,0 +1,32 @@
+fragment CommentBase on Review {
+  id
+  version
+  title
+  text
+  rating
+  locale
+  authorName
+  includedInStatistics
+  createdAt
+  lastModifiedAt
+  target {
+    id
+    ... on Product {
+      masterData {
+        current {
+          name(acceptLanguage: $acceptLanguage)
+        }
+      }
+    }
+  }
+  state {
+    id
+    key
+    name(acceptLanguage: $acceptLanguage)
+    transitions {
+      id
+      key
+      name(acceptLanguage: $acceptLanguage)
+    }
+  }
+}

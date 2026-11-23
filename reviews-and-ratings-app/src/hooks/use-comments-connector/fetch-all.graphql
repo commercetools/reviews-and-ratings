@@ -1,0 +1,18 @@
+#import "./fragments/comment-base.graphql"
+
+query CommentsList(
+  $where: String
+  $sort: [String!]
+  $limit: Int
+  $offset: Int
+  $acceptLanguage: [Locale!]
+) {
+  reviews(where: $where, sort: $sort, limit: $limit, offset: $offset) {
+    total
+    count
+    offset
+    results {
+      ...CommentBase
+    }
+  }
+}

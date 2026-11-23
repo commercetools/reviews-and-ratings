@@ -1,0 +1,11 @@
+#import "./comment-base.graphql"
+
+fragment CommentDetail on Review {
+  ...CommentBase
+  customer {
+    id
+    email
+    firstName
+    lastName
+  }
+}

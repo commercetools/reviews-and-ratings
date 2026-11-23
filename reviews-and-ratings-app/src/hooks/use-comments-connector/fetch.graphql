@@ -1,0 +1,7 @@
+#import "./fragments/comment-detail.graphql"
+
+query Comment($id: String!, $acceptLanguage: [Locale!]) {
+  review(id: $id) {
+    ...CommentDetail
+  }
+}
